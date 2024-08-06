@@ -20,9 +20,9 @@ categories = Category.create!([
 
 # Создание тестов
 tests = Test.create!([
-                       { title: 'Ruby Basics', level: 0, category_id: categories[0].id  },
-                       { title: 'Advanced Math', level: 1, category_id: categories[1].id  },
-                       { title: 'Physics 101', level: 0, category_id: categories[2].id  }
+                       { title: 'Ruby Basics', level: 1, category_id: categories[0].id, author_id: users[0].id },
+                       { title: 'Advanced Math', level: 2, category_id: categories[1].id, author_id: users[1].id },
+                       { title: 'Physics 101', level: 1, category_id: categories[2].id, author_id: users[2].id }
                      ])
 
 # Создание вопросов
@@ -41,3 +41,10 @@ answers = Answer.create!([
                  { body: '299,792,458 m/s', correct: true, question_id: questions[2].id  },
                  { body: '300,000,000 m/s', correct: false, question_id: questions[2].id  }
                ])
+
+# Создание прохождений тестов
+TestPassage.create!([
+                      { user_id: users[0].id , test_id: tests[0].id , current_question_id: questions[0].id , correct_questions: 1 },
+                      { user_id: users[1].id , test_id: tests[1].id , current_question_id: questions[1].id , correct_questions: 2 },
+                      { user_id: users[2].id , test_id: tests[2].id , current_question_id: questions[2].id , correct_questions: 3 }
+                    ])
