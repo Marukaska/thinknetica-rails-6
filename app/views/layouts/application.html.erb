@@ -13,13 +13,19 @@
 
   <body>
 
+    <% if user_signed_in? %>
+    <p class="nav user">
+      Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru |
+    </p>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
+  <% end %>
+
+    <%= flash_messages %>
+
     <%= yield %>
 
-
     <footer>
-      <p>
-        &copy; <%= current_year %> <%= github_url('Marukaska', 'hinknetica-ror-second-step') %> - Учебный проект в онлайн-школе <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
-      </p>
+      <%= render 'shared/footer' %>
     </footer>
 
   </body>

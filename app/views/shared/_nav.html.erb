@@ -1,0 +1,10 @@
+<nav>
+  <%= link_to 'TestGuru', root_path %>
+  <% if current_user %>
+    <span>Welcome, <%= current_user.name %> Guru</span>
+    <%= link_to 'Logout', logout_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Register', signup_path %>
+    <%= link_to 'Login', login_path %>
+  <% end %>
+</nav>
