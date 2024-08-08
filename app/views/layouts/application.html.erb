@@ -8,9 +8,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
     <%= yield %>
+
+
+    <footer>
+      <p>
+        &copy; <%= current_year %> <%= github_url('Marukaska', 'hinknetica-ror-second-step') %> - Учебный проект в онлайн-школе <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
+      </p>
+    </footer>
+
   </body>
 </html>
