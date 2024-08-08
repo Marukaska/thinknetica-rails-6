@@ -1,0 +1,11 @@
+<h1>Test Result: <%= @test_passage.test.title %> test was Completed!</h1>
+
+<p>
+  <% if @test_passage.success? %>
+    <span style="color: green;">You have successfully passed the test with <%= @test_passage.percentage_of_correct_answers %>% correct answers.</span>
+  <% else %>
+    <span style="color: red;">You did not pass the test. You got <%= @test_passage.percentage_of_correct_answers %>% correct answers.</span>
+  <% end %>
+</p>
+
+<p><%= link_to 'Back to all tests', tests_path %></p>
