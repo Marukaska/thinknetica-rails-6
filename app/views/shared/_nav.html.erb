@@ -1,10 +1,11 @@
-<nav>
-  <%= link_to 'TestGuru', root_path %>
-  <% if current_user %>
-    <span>Welcome, <%= current_user.name %> Guru</span>
-    <%= link_to 'Logout', logout_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Register', signup_path %>
-    <%= link_to 'Login', login_path %>
-  <% end %>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand'%>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      <p class="text-dark">
+        <%= t('.welcome', user_first_name: current_user.first_name, user_last_name: current_user.last_name) %> |
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
+      </p>
+    <% end %>
+  </span>
 </nav>

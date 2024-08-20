@@ -13,12 +13,7 @@
 
   <body>
 
-    <% if user_signed_in? %>
-    <p class="nav user">
-      Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru |
-    </p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-button' %>
-  <% end %>
+    <%= render 'shared/nav' %>
 
     <%= flash_messages %>
 
