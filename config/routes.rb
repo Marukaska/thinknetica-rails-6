@@ -3,13 +3,11 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true
-    end
-
-    member do
-      post :start
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
     end
   end
 
@@ -19,5 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tests, only: :index do
+    member do
+      post :start
+    end
+    get :result
+  end
 
 end

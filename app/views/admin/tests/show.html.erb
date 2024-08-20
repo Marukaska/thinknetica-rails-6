@@ -1,0 +1,16 @@
+<p>
+  <strong><%= t('.title') %></strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong><%= t('.level') %>:</strong>
+  <%= @test.level %>
+</p>
+
+<%= render @test.questions %>
+
+
+<%= link_to t('.back'), admin_tests_path %> |
+<%= link_to t('.edit'), edit_admin_test_path(@test) %> |
+<%= link_to t('.new_question'), new_admin_test_question_path(@test) %>

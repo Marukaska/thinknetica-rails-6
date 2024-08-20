@@ -1,0 +1,7 @@
+<p>
+  <%= question.body %>
+  <br>
+  <%= link_to t('.show'), admin_question_path(question) %> |
+  <%= link_to t('.edit'), edit_admin_question_path(question) %> |
+  <%= link_to t('.delete'), admin_question_path(question), data: {"turbo-method": :delete, turbo_confirm: 'Are you sure?'} %>
+</p>
