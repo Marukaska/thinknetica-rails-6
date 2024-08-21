@@ -13,7 +13,7 @@ ru:
   admin:
     nav:
       admin_panel: 'TestGuru Панель Администратора'
-      welcome: 'Добро пожаловать'
+      welcome: "Добро пожаловать, %{user_first_name} %{user_last_name} Гуру!"
     tests:
       create:
         success: "Тест успешно создан"

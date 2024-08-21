@@ -1,11 +1,15 @@
-<h1>Test Result: <%= @test_passage.test.title %> test was Completed!</h1>
+<div class="container mt-4">
+  <h1 class="mb-4">Test Result: <%= @test_passage.test.title %> test was Completed!</h1>
 
-<p>
-  <% if @test_passage.success? %>
-    <span style="color: green;">You have successfully passed the test with <%= @test_passage.percentage_of_correct_answers %>% correct answers.</span>
-  <% else %>
-    <span style="color: red;">You did not pass the test. You got <%= @test_passage.percentage_of_correct_answers %>% correct answers.</span>
-  <% end %>
-</p>
+  <div class="alert <%= @test_passage.success? ? 'alert-success' : 'alert-danger' %>">
+    <% if @test_passage.success? %>
+      You have successfully passed the test with <%= @test_passage.percentage_of_correct_answers %>% correct answers.
+    <% else %>
+      You did not pass the test. You got <%= @test_passage.percentage_of_correct_answers %>% correct answers.
+    <% end %>
+  </div>
 
-<p><%= link_to 'Back to all tests', tests_path %></p>
+  <div class="text-center mt-4">
+    <%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %>
+  </div>
+</div>

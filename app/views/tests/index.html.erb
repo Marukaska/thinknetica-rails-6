@@ -1,16 +1,23 @@
-<h1><%= t('.header') %></h1>
+<h1 class="mb-4"><%= t('.header') %></h1>
 
 <% if @tests.present? %>
-  <table>
+  <table class="table table-striped">
+    <thead class="thead-dark">
     <tr>
       <th><%= t('.title') %></th>
       <th><%= t('.level') %></th>
       <th><%= t('.questions') %></th>
       <th><%= t('.actions') %></th>
     </tr>
-
-  <%= render @tests %>
+    </thead>
+    <tbody>
+    <%= render @tests %>
+    </tbody>
   </table>
 <% else %>
-  <p>There is no tests available.</p>
+  <div class="alert alert-info">
+    <%= t('.no_tests') %>
+  </div>
 <% end %>
+
+

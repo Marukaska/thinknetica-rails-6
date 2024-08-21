@@ -13,7 +13,7 @@ en:
   admin:
     nav:
       admin_panel: 'TestGuru Admin Panel'
-      welcome: 'Welcome'
+      welcome: "Welcome, %{user_first_name} %{user_last_name} Guru!"
     tests:
       create:
         success: "Test is successful created"
@@ -73,7 +73,7 @@ en:
 
   shared:
     nav:
-      welcome: "Welcome, %{user_email} Guru!"
+      welcome: "Welcome, %{user_first_name} %{user_last_name} Guru!"
       log_out: "Logout"
     errors:
       header:
