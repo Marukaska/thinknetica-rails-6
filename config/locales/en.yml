@@ -1,33 +1,85 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  tests:
+    index:
+      header: "Available Tests"
+      no_tests_available: "There are no available tests."
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  admin:
+    nav:
+      admin_panel: 'TestGuru Admin Panel'
+      welcome: "Welcome, %{user_first_name} %{user_last_name} Guru!"
+    tests:
+      create:
+        success: "Test is successful created"
+      update:
+        success: "Test successfully updated"
+      destroy:
+        success: "Test was successfully deleted"
+      index:
+        header: "Available tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        create: "New Test"
+      test:
+        edit: "Edit"
+        show: "Show"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      new:
+        header: "Create new test"
+        back: "Back to tests"
+      edit:
+        header: "Edit test: "
+        back: "Back to tests"
+      show:
+        title: "Title"
+        level: "Level"
+        back: "Back to the tests"
+        edit: "Edit"
+        new_question: "New question"
+    questions:
+      question:
+        edit: "Edit"
+        delete: "Delete"
+        show: "Show"
+
+  helpers:
+    submit:
+      test:
+        create:  "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title: "
+        level: "Level: "
+        category_id: "Category: "
+      question:
+        body: "Body: "
+      answer:
+        body: "Body: "
+        correct: "Correct answer: "
+
+  test_passages:
+    result:
+      header: "Test %{title} completed successfully!"
+
+  shared:
+    nav:
+      welcome: "Welcome, %{user_first_name} %{user_last_name} Guru!"
+      log_out: "Logout"
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"

@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div class="card mb-4">
+    <div class="card-body">
+      <p class="mb-2">
+        <strong><%= t('.test_title') %>:</strong>
+        <%= @test.title %>
+      </p>
+
+      <p class="mb-2">
+        <strong><%= t('.level') %>:</strong>
+        <%= @test.level %>
+      </p>
+
+      <div class="mb-4">
+        <%= render @test.questions %>
+      </div>
+
+      <div>
+        <%= link_to t('.back'), admin_tests_path, class: 'btn btn-secondary' %>
+        <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'btn btn-warning' %>
+        <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+

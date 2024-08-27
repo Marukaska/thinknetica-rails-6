@@ -1,0 +1,7 @@
+<% flash.each do |key, message| %>
+  <% if key == "notice" %>
+    <%= content_tag :p, message.html_safe, class: "alert-primary"%>
+  <% else %>
+    <%= content_tag :p, message.html_safe, class: "alert-danger"%>
+  <% end %>
+<% end %>

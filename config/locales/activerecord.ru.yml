@@ -1,0 +1,16 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      test: 'Тест'
+      question: 'Вопрос'
+      answer: 'Ответ'
+    attributes:
+      test:
+        title: 'Название'
+        category: 'Категория'
+        level: 'Уровень'
+      answer:
+        body: "Текст"
+      question:
+        body: "Текст"

@@ -1,0 +1,23 @@
+<h1 class="mb-4"><%= t('.header') %></h1>
+
+<% if @tests.present? %>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.questions') %></th>
+      <th><%= t('.actions') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @tests %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-info">
+    <%= t('.no_tests') %>
+  </div>
+<% end %>
+
+
