@@ -19,12 +19,14 @@
           <% end %>
         </div>
 
-        <p><%= button_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post, class: "btn btn-secondary" %></p>
+
 
         <div class="form-group text-center">
           <%= form.submit 'Next', class: 'btn btn-primary' %>
         </div>
       <% end %>
+      <%= button_to 'Gist Question', gists_path(test_passage: @test_passage), method: :post, class: "btn btn-secondary" %>
+
     </div>
   </div>
 </div>
