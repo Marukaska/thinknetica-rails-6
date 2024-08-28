@@ -89,5 +89,5 @@ en:
       description: "A question about '%{test_title}' from TestGuru"
 
   gist:
-    success: "Gist was succesfully created!"
+    success: "Gist was succesfully created %{gist_url}!"
     failure: "An error occured while saving gist"

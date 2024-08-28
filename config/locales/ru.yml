@@ -90,7 +90,7 @@ ru:
       subject: "Вы успешно завершили тест на TestGuru!"
 
   gist:
-    success: "Gist успешно сохранен"
+    success: "Gist успешно сохранен %{gist_url}!"
     failure: "Во время сохранения gist произошла ошибка"
 
   services:
