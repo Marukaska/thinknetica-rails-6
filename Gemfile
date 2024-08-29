@@ -28,6 +28,10 @@ gem 'rails-i18n', '>= 5.0.0'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 
+gem 'faraday'
+gem 'octokit'
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
