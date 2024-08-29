@@ -14,5 +14,9 @@ Turbolinks.start()
 ActiveStorage.start()
 
 //= require jquery3
+//= require rails-ujs
 //= require popper
 //= require bootstrap-sprockets
+
+require('../utilities/sorting')
+require('../utilities/password_icon')
