@@ -45,6 +45,8 @@ en:
         back: "Back to the tests"
         edit: "Edit"
         new_question: "New question"
+      form_inline:
+        submit: "ОК"
     questions:
       question:
         edit: "Edit"
