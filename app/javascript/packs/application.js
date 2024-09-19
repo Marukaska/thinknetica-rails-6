@@ -20,3 +20,5 @@ ActiveStorage.start()
 
 require('../utilities/sorting')
 require('../utilities/password_icon')
+require('../utilities/form_inline')
+require('../utilities/progress-bar')

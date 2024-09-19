@@ -45,6 +45,8 @@ ru:
         back: "Назад к тестам"
         edit: "Редактировать"
         new_question: "Новый вопрос"
+      form_inline:
+        submit: "ОК"
     questions:
       question:
         edit: "Редактировать"

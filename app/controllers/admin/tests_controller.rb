@@ -1,5 +1,6 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :set_test, only: %i[show edit update destroy]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[show edit update destroy start update_inline]
 
   def index
     @tests = Test.all
@@ -10,6 +11,14 @@ class Admin::TestsController < Admin::BaseController
 
   def new
     @test = Test.new
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
   end
 
   def create
@@ -46,5 +55,9 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def set_tests
+    @tests = Test.all
   end
 end
