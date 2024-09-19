@@ -1,7 +1,7 @@
 databases:
-  - name: test_guru
-    databaseName: test_guru_production
-    user: postgres
+  - name: dpg-crlvs6o8fa8c739ut9e0-a
+    databaseName: test_guru_production_65h2
+    user: test_guru_production_65h2_user
     plan: free
 
 services:
