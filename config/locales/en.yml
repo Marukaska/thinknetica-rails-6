@@ -9,6 +9,7 @@ en:
       actions: "Actions"
     test:
       start: "Start"
+    error_start: "The test cannot be started because it has no questions."
 
   admin:
     nav:
@@ -72,6 +73,7 @@ en:
   test_passages:
     result:
       header: "Test %{title} completed successfully!"
+    no_answer_selected: "No answer selected. Please choose an answer to proceed."
 
   shared:
     nav:
@@ -93,3 +95,9 @@ en:
   gist:
     success: "Gist was succesfully created %{gist_url}!"
     failure: "An error occured while saving gist"
+
+  feedback:
+    new:
+      send: 'Send feedback'
+    success: 'Your message has been successfully sent.'
+    error: 'Please fill in all fields.'

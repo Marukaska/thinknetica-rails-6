@@ -13,6 +13,9 @@ class TestPassagesController < ApplicationController
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
+    elsif params[:answer_ids].blank?
+      flash[:alert] = t('test_passages.no_answer_selected')
+      render :show
     else
       render :show
     end

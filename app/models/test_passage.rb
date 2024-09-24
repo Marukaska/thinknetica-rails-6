@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_validation :set_next_question, on: :update
 
+
   PERCENTAGE_PASSING_TEST_CORRECTLY = 85
 
   def completed?
@@ -28,10 +29,6 @@ class TestPassage < ApplicationRecord
   end
 
   private
-
-  # def correct_answer?(answer_ids)
-  #   correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-  # end
 
   def correct_answer?(answer_ids)
     !answer_ids.nil? && correct_answers.ids.sort == answer_ids.map(&:to_i).sort
