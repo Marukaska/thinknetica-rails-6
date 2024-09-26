@@ -1,4 +1,4 @@
-class FeedbackController < ApplicationController
+class FeedbacksController < ApplicationController
   def new
   end
 

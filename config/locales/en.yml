@@ -96,7 +96,7 @@ en:
     success: "Gist was succesfully created %{gist_url}!"
     failure: "An error occured while saving gist"
 
-  feedback:
+  feedbacks:
     new:
       send: 'Send feedback'
     success: 'Your message has been successfully sent.'
