@@ -6,13 +6,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    if @test.questions.empty?
-      flash[:alert] = t('.error_start')
-      redirect_to tests_path
-    else
-      current_user.tests.push(@test)
-      redirect_to current_user.test_passage(@test)
-    end
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private

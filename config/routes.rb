@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'feedback/new'
-  get 'feedback/create'
+
   namespace :admin do
     get 'gists/index'
   end

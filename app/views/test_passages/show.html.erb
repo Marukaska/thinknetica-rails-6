@@ -27,20 +27,18 @@
         <div class="form-group mb-3">
           <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
             <div class="form-check">
-              <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
+              <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input answer-check' %>
               <%= b.label class: 'form-check-label' %>
             </div>
           <% end %>
         </div>
 
-
-
         <div class="form-group text-center">
-          <%= form.submit 'Next', class: 'btn btn-primary' %>
+          <%= form.submit 'Next', class: 'btn btn-primary', id: 'next-btn', disabled: true %>
         </div>
       <% end %>
-      <%= link_to 'Gist Question', gists_path(test_passage: @test_passage), method: :post, class: "btn btn-secondary" %>
 
+      <%= link_to 'Gist Question', gists_path(test_passage: @test_passage), method: :post, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>
