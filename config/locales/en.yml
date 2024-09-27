@@ -26,6 +26,7 @@ en:
         header: "Available tests"
         title: "Title"
         level: "Level"
+        status: "Status"
         questions: "Questions"
         actions: "Actions"
         create: "New Test"
@@ -48,11 +49,15 @@ en:
         new_question: "New question"
       form_inline:
         submit: "ОК"
+      mark_not_ready: "Not Ready"
+      mark_ready: "Ready"
     questions:
       question:
         edit: "Edit"
         delete: "Delete"
         show: "Show"
+    mark_not_ready: "Not Ready"
+    mark_ready: "Ready"
 
   helpers:
     submit:

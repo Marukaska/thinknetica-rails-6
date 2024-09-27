@@ -27,6 +27,7 @@ ru:
         header: "Доступные тесты"
         title: "Название"
         level: "Уровень"
+        status: "Статус"
         questions: "Вопросы"
         actions: "Действия"
         create: "Новый тест"
@@ -49,6 +50,8 @@ ru:
         new_question: "Новый вопрос"
       form_inline:
         submit: "ОК"
+      mark_not_ready: "Не готов"
+      mark_ready: "Готов"
     questions:
       question:
         edit: "Редактировать"

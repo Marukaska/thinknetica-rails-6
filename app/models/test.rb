@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   scope :medeum, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :by_category, -> (category_name) { joins(:category).where(categories: { title: category_name }) }
+  scope :ready, -> { where(status: true) }
 
   validates :title, presence: true,
             uniqueness: { scope: :level, message: "should be unique" }
