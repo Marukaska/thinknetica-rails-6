@@ -4,6 +4,9 @@
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td><%= test_level(test) %></td>
+  <td>
+    <%= button_to test.status ? t('admin.tests.mark_ready') : t('admin.tests.mark_not_ready'), update_status_admin_test_path(test), method: :patch, class: test.status ? "btn btn-success btn-status" : "btn btn-danger btn-status" %>
+  </td>
   <td><%= link_to t('.show'), admin_test_path(test) %></td>
   <td><%= link_to t('.edit'), edit_admin_test_path(test), data: { test_id: test.id }, class: 'form-inline-link' %></td>
   <td>

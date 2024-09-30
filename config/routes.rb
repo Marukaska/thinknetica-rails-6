@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     get 'gists/index'
   end
@@ -6,10 +7,13 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  resources :feedbacks, only: [:new, :create]
+
   namespace :admin do
     resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member
+      patch :update_status, on: :member
 
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index

@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
-  before_action :set_test, only: %i[show edit update destroy start update_inline]
+  before_action :set_test, only: %i[show edit update destroy update_inline update_status]
 
   def index
     @tests = Test.all
@@ -45,6 +45,16 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: t('.success')
+  end
+
+  def update_status
+    new_status = !@test.status
+    if @test.update(status: new_status)
+      flash[:notice] = t('.success')
+    else
+      flash[:alert] = t('.error')
+    end
+    redirect_to admin_tests_path
   end
 
   private

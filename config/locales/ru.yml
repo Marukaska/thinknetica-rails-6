@@ -9,6 +9,8 @@ ru:
       actions: "Действия"
     test:
       start: "Начать"
+    error_start: "Тест нельзя начать, так как у него нет вопросов."
+
 
   admin:
     nav:
@@ -25,6 +27,7 @@ ru:
         header: "Доступные тесты"
         title: "Название"
         level: "Уровень"
+        status: "Статус"
         questions: "Вопросы"
         actions: "Действия"
         create: "Новый тест"
@@ -47,6 +50,8 @@ ru:
         new_question: "Новый вопрос"
       form_inline:
         submit: "ОК"
+      mark_not_ready: "Не готов"
+      mark_ready: "Готов"
     questions:
       question:
         edit: "Редактировать"
@@ -75,6 +80,7 @@ ru:
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
+    no_answer_selected: "Ответ не выбран. Пожалуйста, выберите ответ, чтобы продолжить."
 
   shared:
     nav:
@@ -98,3 +104,9 @@ ru:
   services:
     gist_question_service:
       description: "Вопрос о '%{test_title}' из TestGuru"
+
+  feedbacks:
+    new:
+      send: 'Отправить отзыв'
+    success: 'Ваше сообщение успешно отправлено.'
+    error: 'Пожалуйста, заполните все поля.'

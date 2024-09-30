@@ -1,0 +1,15 @@
+<h1><%= t('.feedback') %></h1>
+
+<%= form_with url: feedbacks_path, method: :post, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :email, t('.your_email') %>
+    <%= f.email_field :email, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :message, t('.your_message') %>
+    <%= f.text_area :message, class: 'form-control', rows: 5, required: true %>
+  </div>
+
+  <%= f.submit t('.send'), class: 'btn btn-primary' %>
+<% end %>
