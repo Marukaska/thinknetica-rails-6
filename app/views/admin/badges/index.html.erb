@@ -1,0 +1,30 @@
+<h1><%= t('admin.badges.index.title') %></h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= t('admin.badges.index.name') %></th>
+    <th><%= t('admin.badges.index.image') %></th>
+    <th><%= t('admin.badges.index.rule') %></th>
+    <th><%= t('actions') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= badge.title %></td>
+      <td><img src="<%= badge.image_filename %>" alt="<%= badge.title %>" width="50"></td>
+      <td><%= badge.rule_type %> <%= badge.rule_value.present? ? "(#{badge.rule_value})" : "" %></td>
+      <td>
+        <%= link_to t('admin.badges.index.edit'), edit_admin_badge_path(badge), class: 'btn btn-primary btn-sm' %>
+        <%= link_to t('admin.badges.index.delete'), admin_badge_path(badge),
+                    method: :delete,
+                    data: { confirm: t('admin.badges.index.confirm_delete') },
+                    class: 'btn btn-danger btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('admin.badges.index.new_badge'), new_admin_badge_path, class: 'btn btn-success' %>

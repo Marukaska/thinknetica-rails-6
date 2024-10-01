@@ -12,6 +12,18 @@ en:
     error_start: "The test cannot be started because it has no questions."
 
   admin:
+    badges:
+      form:
+        title: "Badge title"
+        image: "Badge image filename"
+        rule: "Rule"
+        rule_value: "Rule value"
+        create_badge: "Create Badge"
+        select_rule: "Please select a rule"
+      rules:
+        category_complete: "All tests from a category"
+        first_attempt: "First attempt pass"
+        level_complete: "All tests of a certain level"
     nav:
       admin_panel: 'TestGuru Admin Panel'
       welcome: "Welcome, %{user_first_name} %{user_last_name} Guru!"

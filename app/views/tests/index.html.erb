@@ -1,4 +1,7 @@
-<h1 class="mb-4"><%= t('.header') %></h1>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-4"><%= t('.header') %></h1>
+  <%= link_to t(".badges"), badges_path, class: "btn btn-primary" %>
+</div>
 
 <% if @tests.present? %>
   <table class="table table-striped table-hover">
