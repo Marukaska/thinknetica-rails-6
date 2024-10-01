@@ -20,7 +20,10 @@ class BadgeAwardService
     return false unless category
 
     tests_in_category = category.tests.ids
-    passed_tests_in_category = @user.test_passages.where(test_id: tests_in_category).select(&:success?).map(&:test_id).uniq
+    passed_tests_in_category = @user.test_passages
+                                    .where(test_id: tests_in_category, success: true)
+                                    .pluck(:test_id)
+                                    .uniq
 
     tests_in_category.sort == passed_tests_in_category.sort
   end
@@ -34,7 +37,10 @@ class BadgeAwardService
   def check_level_complete?(badge)
     level = badge.rule_value.to_i
     tests_of_level = Test.where(level: level).ids
-    passed_tests_of_level = @user.test_passages.where(test_id: tests_of_level).select(&:success?).map(&:test_id).uniq
+    passed_tests_of_level = @user.test_passages
+                                 .where(test_id: tests_by_level, success: true)
+                                 .pluck(:test_id)
+                                 .uniq
 
     tests_of_level.sort == passed_tests_of_level.sort
   end
