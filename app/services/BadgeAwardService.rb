@@ -38,7 +38,7 @@ class BadgeAwardService
     level = badge.rule_value.to_i
     tests_of_level = Test.where(level: level).ids
     passed_tests_of_level = @user.test_passages
-                                 .where(test_id: tests_by_level, success: true)
+                                 .where(test_id: tests_of_level, success: true)
                                  .pluck(:test_id)
                                  .uniq
 

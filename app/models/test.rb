@@ -18,4 +18,8 @@ class Test < ApplicationRecord
   def self.sorted_titles_by_category(category_name)
     by_category(category_name).order(title: :desc).pluck(:title)
   end
+
+  def timed?
+    timer.present? && timer > 0
+  end
 end
