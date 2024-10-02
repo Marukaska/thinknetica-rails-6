@@ -18,28 +18,14 @@
     </div>
 
     <div class="card-body">
-      <% if @test_passage.test.timed? %>
+      <% if @test_passage.test.timer.present? %>
         <div class="alert alert-warning">
-          <strong>Time Left: </strong>
-          <span id="time-left"><%= @test_passage.time_left %> seconds</span>
+          <strong><%= t('time_left') %>:</strong>
+          <span id="time-left" data-end-time="<%= Time.current.to_i + @test_passage.time_left %>"
+                data-redirect-url="<%= result_test_passage_path(@test_passage) %>">
+        <%= @test_passage.time_left %> <%= t('seconds') %>
+      </span>
         </div>
-
-        <script>
-
-            let timeLeft = <%= @test_passage.time_left %>;
-
-            function updateTimer() {
-                if (timeLeft <= 0) {
-                    alert('Time is up! The test will be submitted.');
-                    document.getElementById('submit-test-form').submit();
-                } else {
-                    document.getElementById('time-left').textContent = timeLeft + ' seconds';
-                    timeLeft--;
-                }
-            }
-
-            setInterval(updateTimer, 1000);
-        </script>
       <% end %>
 
       <h5 class="card-title"><%= @test_passage.current_question.body %></h5>
