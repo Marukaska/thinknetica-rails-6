@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   resources :feedbacks, only: [:new, :create]
+  resources :badges, only: :index
 
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
     resources :tests do
       patch :update_inline, on: :member
       patch :update_status, on: :member

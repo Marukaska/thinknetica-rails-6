@@ -13,6 +13,18 @@ ru:
 
 
   admin:
+    badges:
+      form:
+        title: "Название бэйджа"
+        image: "Имя файла изображения бэйджа"
+        rule: "Правило"
+        rule_value: "Значение правила"
+        create_badge: "Создать бэйдж"
+        select_rule: "Пожалуйста, выберите правило"
+      rules:
+        category_complete: "Все тесты из категории"
+        first_attempt: "Прохождение с первой попытки"
+        level_complete: "Все тесты определенного уровня"
     nav:
       admin_panel: 'TestGuru Панель Администратора'
       welcome: "Добро пожаловать, %{user_first_name} %{user_last_name} Гуру!"

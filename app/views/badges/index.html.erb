@@ -1,0 +1,21 @@
+<h1><%= t('.title') %></h1>
+
+<h2><%= t('.earned_badges') %></h2>
+<div class="earned-badges">
+  <% @badges.each do |badge| %>
+    <div class="badge">
+      <img src="<%= badge.image_filename %>" alt="<%= badge.title %>">
+      <p><%= badge.title %></p>
+    </div>
+  <% end %>
+</div>
+
+<h2><%= t('.available_badges') %></h2>
+<div class="available-badges">
+  <% @all_badges.each do |badge| %>
+    <div class="badge">
+      <img src="<%= badge.image_filename %>" alt="<%= badge.title %>">
+      <p><%= badge.title %></p>
+    </div>
+  <% end %>
+</div>

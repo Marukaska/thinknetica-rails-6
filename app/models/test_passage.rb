@@ -5,6 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_validation :set_next_question, on: :update
+  before_update :set_success, if: :completed?
 
 
   PERCENTAGE_PASSING_TEST_CORRECTLY = 85
@@ -46,8 +47,11 @@ class TestPassage < ApplicationRecord
     self.current_question = next_question
   end
 
-
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
+  end
+
+  def set_success
+    self.success = success? # Сохранение результата в столбец success
   end
 end
