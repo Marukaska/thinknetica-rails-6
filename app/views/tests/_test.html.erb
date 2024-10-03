@@ -2,6 +2,13 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
+  <td>
+    <% if test.timed? %>
+      <span class="badge badge-success">Timer: <%= test.timer %> minutes</span>
+    <% else %>
+      <span class="badge badge-secondary">No Timer</span>
+    <% end %>
+  </td>
   <td><%= button_to t('.start'), start_test_path(test) %></td>
 </tr>
 

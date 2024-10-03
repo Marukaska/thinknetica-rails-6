@@ -29,6 +29,16 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).round(2)
   end
 
+  def time_left
+    return nil unless test.timed?
+    test.timer * 60 - (Time.current - created_at).to_i
+  end
+
+  def time_up?
+    return nil unless test.timed?
+    time_left <= 0
+  end
+
   private
 
   def correct_answer?(answer_ids)
